@@ -32,4 +32,4 @@ Last I made a simple text based UI to test both functions,  however it was not t
 to test the functions easily without having to re-compile the C file
 
 the example.exe was complite for X64 windows 10  
- 
+both textfiles ResourceNumbers and ResourceCodes should be in the same directory as the .exe or the c file when compiling it 
