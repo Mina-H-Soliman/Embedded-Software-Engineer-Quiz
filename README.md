@@ -2,8 +2,7 @@
 
 In this file I will incluide some comments for the code developed
 
-The C file contains code developed for both tasks of the quiz 
- + some test cases + a simple text terminal (CMD) UI to test the code for both tasks 
+The C file contains code developed for both tasks of the quiz + some test cases + a simple text terminal (CMD) UI to test the code for both tasks 
 
 For the first Task in the quiz I worte the code for the function called Task1LargestSquaresInRectangle 
 which is a recursive function that takes both sides of a rectangle M and N 
