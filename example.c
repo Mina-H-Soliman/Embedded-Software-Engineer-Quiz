@@ -13,14 +13,14 @@ void BuildCustomBase62 (int number, char code[]){
 int counter =2;
 while (number>0){
 int remainder = number%62;
-if (Changes[remainder]&& CustomBase62[remainder] != code[counter]){ printf("Faulty assumption "); }
+if (Changes[remainder]&& CustomBase62[remainder] != code[counter]){ printf("Faulty assumption  "); }
 CustomBase62[remainder] = code[counter];
 Changes[remainder] =1;
 number =number/62;
 counter--;
 }
 }
-
+// function that used the deduced base62 substitution Cipher to create a code for any number in the int range
 void CreateCodeFromNumber (int number){
   printf("Number: %d  Code: ",number);  
   if (number==0){printf("%c \n",CustomBase62[0]); return;}
@@ -38,7 +38,7 @@ printf("%c", outputBuffer[i]);
 }
 printf(" \n");
 }
-
+// function that calls the function deducing the base62 cipher for each number code pair 
 void CallBuildCustomBase62(){
     for(int i=0;i<75;i++){
     char code[4];
@@ -50,7 +50,7 @@ void CallBuildCustomBase62(){
     }
 
 }
-
+// function that checks if there is any charcter that could not be deduced from the given number code pairs
 void CheckIfMissingaChange(){
 for (int i=0;i<62;i++){
     if (Changes[i]!=1){ printf("%d Missing a change at %c: Not enough data to completely guess Cipher \n",i,CustomBase62[i]);}
@@ -59,6 +59,7 @@ for (int i=0;i<62;i++){
 CustomBase62[21]='5';
 }
 
+// function for task 1  to calculate the largest square in a rectangle
 void Task1LargestSquaresInRectangle(int N, int M)
 {  if(N==0 || M==0){printf("One or more side is zero so no positive area possible \n");return;} 
    if(N<0 || M<0){printf("One or more side is negative so no positive area possible \n");return;}  
@@ -67,7 +68,7 @@ void Task1LargestSquaresInRectangle(int N, int M)
    else{ printf("%d%c%d, ",M,'X',M); N=N-M; }
    Task1LargestSquaresInRectangle(N,M);
 }
-
+// loading the numbers from a text file and storing it in an array
 int Task2GetNumbersFromFile()
 {    
   FILE    *textfile;
@@ -79,14 +80,14 @@ int Task2GetNumbersFromFile()
     int NumberOfLines=0;
     while(fgets(line, MAX_LINE_LENGTH, textfile)){
         Task2Numbers[NumberOfLines] = atoi(line);
-       // printf("%d",Task2Numbers[NumberOfLines]);
+      
         NumberOfLines++;
     }
      printf("\n");
     fclose(textfile);
 
 }
- 
+ // loading the codes from a test file and storing it
 int Task2GetCodesFromFile()
 {    
   FILE    *textfile;
@@ -101,14 +102,14 @@ int Task2GetCodesFromFile()
         for (int i=0;i<4;i++){
         Task2Codes[NumberOfLines][i]= line[i];
         }
-       // printf("%c%c%c",Task2Codes[NumberOfLines][0],Task2Codes[NumberOfLines][1],Task2Codes[NumberOfLines][2]);
+      
         NumberOfLines++;
     }
      printf("\n");
     fclose(textfile);
 
 }
-
+// function to print the stored numbers and codes to validate them
 void PrintNumbersandCodes(){
 for (int i=0;i<75;i++){
    printf("%d",Task2Numbers[i]);
