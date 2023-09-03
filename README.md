@@ -1,4 +1,4 @@
-# DBNC-Embedded-Software-Engineer-Quiz
+# Embedded-Software-Engineer-Quiz
 
 In this file I will incluide some comments for the code developed
 
